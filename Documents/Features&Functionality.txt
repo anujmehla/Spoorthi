@@ -1,0 +1,10 @@
+Spoorthi Project:
+
+Features : 
+
+Functionality : 
+
+Tool's Technology : 
+
+Dependencies : We'll use gradle instead of mvn
+
