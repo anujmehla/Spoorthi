@@ -1,0 +1,54 @@
+.image-animation {
+    background-image: url('https://img.freepik.com/free-photo/smiley-volunteers-preparing-boxes-with-food-donation_23-2148732708.jpg?t=st=1719990494~exp=1719994094~hmac=c57ea8eb2974fe92e8b76a2fd2e1afc3fbe5dd0c752f84eef089b75be395fb99&w=996');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoomOut 5s infinite;
+    font-family: cursive;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Donationinfo {
+    padding: 15px;
+    background-color: #f9f9f9;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+.cast {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow to the text */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px;
+}
+.donate-button{
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.donate-button {
+    background-color:teal;
+}

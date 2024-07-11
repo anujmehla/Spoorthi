@@ -1,0 +1,140 @@
+.ContactUs {
+    background-image: url('https://img.freepik.com/free-photo/open-palm-hand-gesture-presenting-invisible-hologram_53876-105158.jpg?t=st=1720083533~exp=1720087133~hmac=17218b8f5cecbe09be5cea8b687f1c47e0943807393668ff9fa9759e3aef9c40&w=996');
+    background-size: cover;
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact {
+    font-size: 45px;
+    margin-right: 40px;
+
+}
+
+.contactw {
+    font-size: 20px;
+    margin-right: 80px;
+}
+
+.orange {
+    color: #ff7a01;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 30px;
+
+    padding: 30px;
+    border: 3px solid #ff7a01;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.heading {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.form-container .form .input {
+
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid black;
+}
+
+.form-container .form .textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    outline: none;
+    font-weight: bold;
+    resize: none;
+    max-height: 150px;
+    margin-bottom: 20px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.form-container .form .button-container .send-button {
+    flex-basis: 70%;
+    padding: 10px;
+    color: #001925;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.send-button:hover {
+    background: yellow;
+
+
+}
+.imagebelow{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.form-container .form .button-container {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    color: #ff7a01;
+    font-weight: bold;
+  
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: all 0.2s ease-in-out;
+}
+
+.send-button {
+    background-color: #ff7a01;
+}
+
+.list-unstyled {
+    margin-top: 20px;
+    /* Adjust as needed */
+}
+
+.list-unstyled li {
+    margin-bottom: 20px;
+    /* Adjust as needed */
+}
+
+.list-unstyled .h1,
+.list-unstyled .h1 i {
+    font-size: 2.5rem;
+    /* Adjust as needed */
+    font-family: 'Courier New', Courier, monospace;
+
+}.input{
+    font-size: 20px; /* Adjust placeholder font size */
+    padding: 10px; /* Adjust padding as needed */
+    color: #555; /* Optional: Adjust placeholder text color */
+}
+.textarea {
+    font-size: 20px; 
+    padding: 10px;
+    color: #555; 
+}  @media (max-width: 767.98px) {
+    .contact, .contactw {
+        text-align: center;
+    }
+
+    .form-container {
+        margin: 10px;
+    }
+
+    .send-button {
+        width: 100%;
+    }
+}

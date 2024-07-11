@@ -1,0 +1,58 @@
+.HomePage {
+    background-image: url('../../assets/oldmanimage.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav-link {
+    padding-top: 35px;
+    font-size: 20px;
+    color: white;
+}
+
+.navbar .nav-link {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.navbar .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-link:hover::before {
+    background-color: orangered;
+}
+
+.callus {
+    padding-top: 48px;
+    font-size: 20px;
+    color: white;
+}
+.calluse {
+    padding-top: 48px;
+    font-size: 20px;
+    color: orangered;
+}
+
+
+@media (max-width: 768px) {
+    .nav-link {
+        padding-top: 10px;
+        font-size: 16px;
+    }
+
+    .callus {
+        padding-top: 20px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+

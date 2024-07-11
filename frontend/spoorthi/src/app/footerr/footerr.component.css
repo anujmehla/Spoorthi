@@ -1,0 +1,68 @@
+p {
+    font-size: 20px;
+    color: #495057;
+    color: white;
+}
+
+.social-icons {
+    display: inline-block;
+    margin-top: 10px;
+    
+}
+
+.social-icons i {
+    font-size: 24px;
+    /* Adjust size as needed */
+    color: paleturquoise;
+    /* Adjust color */
+    margin-right: 10px;
+    text-align: center;
+}
+
+.social-icons i:hover {
+    color: white;
+    /* Change color on hover */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+}
+
+.navigation {
+    padding-top: 50px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+}
+
+.small-button {
+    font-size: 14px;
+    padding: 8px 20px;
+    color: #fff;
+    background-color: #ff6600;
+    border: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.circular-button {
+    width: 50px; /* Adjust button width */
+    height: 50px; /* Adjust button height */
+    border-radius: 50%; /* Makes the button circular */
+    background-color: #007bff; /* Button background color */
+    border: none; /* Removes default button border */
+    color: #fff; /* Text color */
+    font-size: 24px; /* Adjust icon size */
+    cursor: pointer; /* Cursor style */
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center; /* Center align horizontally */
+    align-items: center; /* Center align vertically */
+}
+
+.circular-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}

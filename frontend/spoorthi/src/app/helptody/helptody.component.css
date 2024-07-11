@@ -1,0 +1,58 @@
+.help{
+    background-color: orangered;
+    height:70vh;
+}
+.small-heading{
+    color:white;
+    font-size: 40px;
+    text-align: center;
+}
+.large-heading{
+    color:white;
+    font-size: 80px;
+    text-align: center;
+}  
+
+    .image-description {
+        font-size: 25px;
+        color:white;
+        margin-top: 10px;
+    }
+
+    .image-details {
+        font-size: 20px;
+        color: white;
+        margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .large-heading {
+            font-size: 30px; /* Smaller font size on mobile */
+        }
+        .small-heading {
+            font-size:20px; /* Smaller font size on mobile */
+        }
+        .image-description {
+            font-size: 20px; /* Smaller font size on mobile */
+        }
+        .image-details {
+            font-size: 20px; /* Smaller font size on mobile */
+        }
+    }
+    .sai {
+        height: 100px;
+        width: 100px;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Ensures the image fits within the circular container */
+    }
+    
+    .sai img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover; /* Ensures the image covers the container without distortion */
+    }
+    

@@ -1,0 +1,121 @@
+.cards {
+    padding: 30px; /* Padding around the cards */
+    background-color: #f8f9fa; /* Background color */
+    justify-content: center;
+}
+
+/* Style for the heading */
+.cards h1 {
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 30px; /* Bottom margin for spacing */
+    color: #333; /* Text color */
+}
+
+
+.card {
+    margin-bottom: 20px; /* Bottom margin for spacing between cards */
+    border: 1px solid #ddd; /* Border color and thickness */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Shadow effect */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Larger shadow on hover */
+}
+
+/* Style for card images */
+.card-img-top {
+    max-height: 200px; /* Limit image height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Style for card body */
+.card-body {
+    padding: 15px; /* Padding inside the card body */
+}
+
+/* Style for card text */
+.card-text {
+    color: #555; 
+    font-size: 25px;
+}  
+
+.square-button {
+    display: inline-block;
+    background-color:green;
+    font-size: 20px;
+    color: #fff; /* Text color */
+    text-align: center;
+    padding: 10px 20px; 
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.1s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect for square buttons */
+.square-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+/* Optional: Adjust button styles for smaller screens */
+@media (max-width: 768px) {
+    .square-button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+    
+}
+
+
+/* Applying animation to the heading */
+.animated-heading {
+    animation: slideInFromLeft 8s ease-out infinite;
+    background-color:seagreen;
+    padding:20px;
+}
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Applying styles to the heading */
+.animated-heading {
+    animation: scrollText 10s linear infinite; /* Adjust speed by changing the duration (10s in this example) */
+    text-shadow: 2px 2px 4px #000000; /* Optional: Text shadow for better visibility */
+    color: #ffffff; /* Text color */
+    font-size: 2rem; /* Font size */
+}
+
+.cards{
+    /* background-image: url('https://img.freepik.com/free-photo/front-view-person-holding-donation-box_23-2148613217.jpg?t=st=1720158634~exp=1720162234~hmac=3f8fe0ab24a7fbb677398820a527a99633d8e554611df379385f50febb518076&w=900');
+    background-size: cover;
+    background-repeat: no-repeat; */
+
+    background-color: lightslategray;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+.text-white {
+    color: white;
+}
+.square-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.square-button:hover {
+    background-color: red;
+}

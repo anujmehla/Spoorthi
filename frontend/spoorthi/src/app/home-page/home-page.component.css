@@ -1,0 +1,158 @@
+.HomePage {
+    background-image: url('../../assets/oldmanimage.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.nav-link {
+    padding-top: 35px;
+    font-size: 20px;
+    color: white;
+}
+
+.navbar .nav-link {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.navbar .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-link:hover::before {
+    background-color: orangered;
+}
+
+.callus {
+    padding-top: 48px;
+    font-size: 20px;
+    color: white;
+}
+.calluse {
+    padding-top: 48px;
+    font-size: 20px;
+    color: orangered;
+}
+
+
+@media (max-width: 768px) {
+    .nav-link {
+        padding-top: 10px;
+        font-size: 16px;
+    }
+
+    .callus {
+        padding-top: 20px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.textone, .texttwo {
+    display: block;
+    color: white;
+    margin-left: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2s forwards;
+}
+
+.textone {
+    font-size: 60px;
+    padding-top: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation-delay: 0.5s;
+}
+
+.texttwo {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    animation-delay: 1s infinite;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+ .square-button {
+    display: inline-block;
+    width: 150x; 
+    height: 50px; 
+    background-color:tomato;
+    color: white;
+    border: none; 
+    border-radius: 0; 
+    font-size: 20px; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    text-align: end;
+}
+
+.square-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.helpclass
+{
+    height: 300px;
+    width:500px;
+}  
+.animate-text {
+    position: relative;
+    animation: slide-in 5s forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size:20px;
+    margin-bottom: 1.5rem;
+}
+
+.donate-button, .view-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+   
+    color: white;
+}
+
+.donate-button {
+    background-color: #ff6347;
+}
+
+.view-button {
+    background-color: #4682b4;
+}
