@@ -13,7 +13,7 @@ Entity required :
     c. image
     d. content
 
-3. "Testionminals"
+3. "Testimonials"
     a. id
     b. image
     c. description
@@ -47,14 +47,27 @@ Entity required :
     e. date
     f. authorName
 
+7. "Payment"
+    a. id
+    b. Name
+    c. amount donated
+    d. mobile Number
+    e. mode of payment : enum (cc, upi, debit card, cheque, cash)
+    f. emailId
+    g. transactionId
+    h. dateTime (Timestamp)
 
-
-
+8. "Developers"
+    a. First Name
+    b. Last Name
+    c. Phone Number
+    d. Email Id
+    e. Address
 
 Admin Dashboard in angular, it will have different pages
 
 
-Authentication & Authrization : Spring Security 6
+Authentication & Authorization : Spring Security 6
 JWT (Json Web Tokens)
 
 
