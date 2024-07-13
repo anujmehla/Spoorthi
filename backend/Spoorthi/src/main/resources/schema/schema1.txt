@@ -6,6 +6,7 @@ Entity required :
     d. password
     e. email
     f. phone Number
+    g. gender
 
 2. "Cards"
     a. id
