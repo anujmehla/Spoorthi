@@ -20,10 +20,13 @@ public class UserEntity {
     @Column(name = "lastName", nullable = false)
     private String lastName;
 
+    @Column(name = "username", nullable = false)
+    private String username;
+
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "email",nullable = false, unique = true)
+    @Column(name = "email",nullable = false, unique = true, updatable = false)
     private String email;
 
     @Column(name = "password",nullable = false)
@@ -34,5 +37,8 @@ public class UserEntity {
 
     @Column(name = "phone")
     private String phone;
+
+    @Column(name = "deleted", nullable = false, columnDefinition = "BOOLEAN DEFAULT 'FALSE'")
+    private boolean isDeleted;
 
 }

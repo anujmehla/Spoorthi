@@ -7,6 +7,8 @@ Entity required :
     e. email
     f. phone Number
     g. gender
+    h. username
+    i. deleted(boolean)
 
 2. "Cards"
     a. id

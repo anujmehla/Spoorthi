@@ -1,7 +1,5 @@
 package com.anuj.Spoorthi.users;
 
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -26,6 +24,10 @@ public class UserRequest {
     @NotBlank
     @Size(min = 10,max = 10)
     private String phone;
+
+    @NotBlank
+    @Size(min = 4)
+    private String username;
 
     private Gender gender;
 

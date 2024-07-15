@@ -1,7 +1,14 @@
 package com.anuj.Spoorthi.users;
 
+
 public interface UserService {
 
-    public String addUser(UserRequest userRequest);
+    String addUser(UserRequest userRequest);
+
+    UserEntity getUser(String username);
+
+    String updateUser(String username, UserRequest userRequest);
+
+    String deleteUser(String username);
 
 }
