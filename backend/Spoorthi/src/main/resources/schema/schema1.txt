@@ -31,6 +31,8 @@ Entity required :
     g. extra
     h. goalAmount
     i. raisedAmount
+    j. deleted
+
 
 5. "Address"
     a. id (primary key)
