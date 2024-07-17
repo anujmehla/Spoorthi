@@ -16,6 +16,7 @@ public class UserController {
 
     @PostMapping("/create")
     public ResponseEntity<?> addUser(@Valid @RequestBody UserRequest userRequest, BindingResult bindingResult) {
+        System.out.println(userRequest);
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }

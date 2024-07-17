@@ -1,5 +1,7 @@
 package com.anuj.Spoorthi.users;
 
+import com.anuj.Spoorthi.Address.AddressEntity;
+import com.anuj.Spoorthi.Address.AddressRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +19,22 @@ public class UserServiceImpl implements UserService {
     @Override
     public String addUser(UserRequest userRequest) {
         UserEntity newUser = new UserEntity();
+        BeanUtils.copyProperties(userRequest,newUser);
+
+        AddressRequest address = userRequest.getAddress();
+
+        if(address !=null) {
+            AddressEntity addressEntity = new AddressEntity();
+            BeanUtils.copyProperties(address, addressEntity);
+            newUser.setAddress(addressEntity);
+        }
+
+        System.out.println("in service");
+        System.out.println(newUser);
 
         UserEntity userCreated = null;
-        BeanUtils.copyProperties(userRequest,newUser);
+
+
         try {
             userCreated = userRepository.save(newUser);
             log.info(userCreated.toString());

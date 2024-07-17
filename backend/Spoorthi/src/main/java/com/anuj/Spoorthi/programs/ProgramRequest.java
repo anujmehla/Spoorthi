@@ -1,8 +1,10 @@
 package com.anuj.Spoorthi.programs;
 
+import com.anuj.Spoorthi.Address.AddressRequest;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails;
 
 import java.time.LocalDate;
 
@@ -29,6 +31,9 @@ public class ProgramRequest {
 
     @NotNull
     private double raisedAmount;
+
+    @NotNull
+    private AddressRequest address;
 
 
     private boolean isDeleted;
