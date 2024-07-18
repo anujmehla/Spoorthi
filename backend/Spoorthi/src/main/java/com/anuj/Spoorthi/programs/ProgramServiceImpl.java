@@ -1,5 +1,7 @@
 package com.anuj.Spoorthi.programs;
 
+import com.anuj.Spoorthi.Address.AddressEntity;
+import com.anuj.Spoorthi.Address.AddressRequest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,14 @@ public class ProgramServiceImpl implements ProgramService{
 
         ProgramEntity programEntity = new ProgramEntity();
         BeanUtils.copyProperties(program,programEntity);
+
+        AddressRequest address = program.getAddress();
+        AddressEntity addressEntity = new AddressEntity();
+
+        BeanUtils.copyProperties(address,addressEntity);
+        programEntity.setAddress(addressEntity);
+
+
 
         ProgramEntity savedEntity = repository.save(programEntity);
 

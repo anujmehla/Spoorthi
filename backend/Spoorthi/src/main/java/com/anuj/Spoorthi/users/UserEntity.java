@@ -1,5 +1,6 @@
 package com.anuj.Spoorthi.users;
 
+import com.anuj.Spoorthi.Address.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -11,7 +12,7 @@ import lombok.Data;
 })
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "firstName" , nullable = false)
@@ -37,6 +38,10 @@ public class UserEntity {
 
     @Column(name = "phone")
     private String phone;
+
+    @OneToOne(cascade = CascadeType.ALL, optional = true) // The relationship is optional
+    @JoinColumn(name = "address_id", nullable = true) // Foreign key column is nullable
+    private AddressEntity address;
 
     @Column(name = "deleted", nullable = false, columnDefinition = "BOOLEAN DEFAULT 'FALSE'")
     private boolean isDeleted;

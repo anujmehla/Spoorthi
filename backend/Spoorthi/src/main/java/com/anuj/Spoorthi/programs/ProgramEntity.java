@@ -1,12 +1,15 @@
 package com.anuj.Spoorthi.programs;
 
+import com.anuj.Spoorthi.Address.AddressEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Entity
@@ -15,7 +18,7 @@ import java.time.LocalDate;
 public class ProgramEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotBlank
@@ -39,6 +42,10 @@ public class ProgramEntity {
 
     @NotNull
     private Double raisedAmount;
+
+    @OneToOne(cascade = CascadeType.ALL , optional = false ) // The relationship is mandatory
+    @JoinColumn(name = "address_id" , nullable = false) // Foreign key column is mandatory , not nullable
+    private AddressEntity address;
 
     @Column(name = "deleted", nullable = false, columnDefinition = "BOOLEAN DEFAULT 'FALSE'")
     private boolean isDeleted;

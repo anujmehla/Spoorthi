@@ -1,7 +1,9 @@
 package com.anuj.Spoorthi.users;
 
+import com.anuj.Spoorthi.Address.AddressRequest;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -32,5 +34,7 @@ public class UserRequest {
     private Gender gender;
 
     private Role role;
+
+    private AddressRequest address;
 
 }

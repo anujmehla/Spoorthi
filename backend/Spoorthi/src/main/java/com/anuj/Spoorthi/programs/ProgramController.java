@@ -19,7 +19,8 @@ public class ProgramController {
     @PostMapping("/create")
     public ResponseEntity<?> addProgram(@Valid @RequestBody ProgramRequest program , BindingResult bindingResult){
 
-        if(bindingResult.hasErrors()){
+        System.out.println(program.toString());
+        if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
         String status = programService.addProgram(program);
