@@ -1,6 +1,7 @@
-package com.anuj.Spoorthi.programs;
+package com.anuj.spoorthi.programs;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/programs")
 public class ProgramController {
@@ -19,7 +21,6 @@ public class ProgramController {
     @PostMapping("/create")
     public ResponseEntity<?> addProgram(@Valid @RequestBody ProgramRequest program , BindingResult bindingResult){
 
-        System.out.println(program.toString());
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(bindingResult.getAllErrors(), HttpStatus.BAD_REQUEST);
         }
@@ -42,11 +43,10 @@ public class ProgramController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateProgram(@Valid @RequestBody ProgramRequest program , @PathVariable int id){
+
         ProgramResponse response = programService.updateProgram(program, id);
         String message = "UPDATED SUCCESSFULLY";
         if(response == null) message = "UPDATE FAILED";
-
-
 
         return new ResponseEntity<>(message,HttpStatus.OK);
     }

@@ -1,7 +1,7 @@
-package com.anuj.Spoorthi.users;
+package com.anuj.spoorthi.users;
 
-import com.anuj.Spoorthi.Address.AddressEntity;
-import com.anuj.Spoorthi.Address.AddressRequest;
+import com.anuj.spoorthi.address.AddressEntity;
+import com.anuj.spoorthi.address.AddressRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

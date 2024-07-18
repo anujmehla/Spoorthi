@@ -1,11 +1,8 @@
-package com.anuj.Spoorthi.Address;
+package com.anuj.spoorthi.address;
 
-import com.anuj.Spoorthi.programs.ProgramEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
 @Entity

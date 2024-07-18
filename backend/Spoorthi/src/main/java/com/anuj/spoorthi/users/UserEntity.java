@@ -1,6 +1,6 @@
-package com.anuj.Spoorthi.users;
+package com.anuj.spoorthi.users;
 
-import com.anuj.Spoorthi.Address.AddressEntity;
+import com.anuj.spoorthi.address.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 

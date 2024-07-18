@@ -1,9 +1,8 @@
-package com.anuj.Spoorthi.users;
+package com.anuj.spoorthi.users;
 
-import com.anuj.Spoorthi.Address.AddressRequest;
+import com.anuj.spoorthi.address.AddressRequest;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 

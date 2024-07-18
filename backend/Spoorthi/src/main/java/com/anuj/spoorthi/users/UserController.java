@@ -1,4 +1,4 @@
-package com.anuj.Spoorthi.users;
+package com.anuj.spoorthi.users;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

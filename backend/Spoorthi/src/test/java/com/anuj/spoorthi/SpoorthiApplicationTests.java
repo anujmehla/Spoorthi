@@ -1,4 +1,4 @@
-package com.anuj.Spoorthi;
+package com.anuj.spoorthi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

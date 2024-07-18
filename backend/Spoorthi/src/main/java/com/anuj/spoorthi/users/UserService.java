@@ -1,4 +1,4 @@
-package com.anuj.Spoorthi.users;
+package com.anuj.spoorthi.users;
 
 
 public interface UserService {

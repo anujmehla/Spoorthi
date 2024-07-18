@@ -1,4 +1,4 @@
-package com.anuj.Spoorthi;
+package com.anuj.spoorthi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

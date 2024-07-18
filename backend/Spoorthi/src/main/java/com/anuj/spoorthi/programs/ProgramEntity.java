@@ -1,15 +1,13 @@
-package com.anuj.Spoorthi.programs;
+package com.anuj.spoorthi.programs;
 
-import com.anuj.Spoorthi.Address.AddressEntity;
+import com.anuj.spoorthi.address.AddressEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Entity

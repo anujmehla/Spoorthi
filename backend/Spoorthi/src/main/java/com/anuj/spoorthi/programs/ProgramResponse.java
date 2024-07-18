@@ -1,7 +1,6 @@
-package com.anuj.Spoorthi.programs;
+package com.anuj.spoorthi.programs;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.anuj.spoorthi.address.AddressResponse;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -9,26 +8,21 @@ import java.time.LocalDate;
 @Data
 public class ProgramResponse {
 
-
-
     private String name;
-
 
     private String description;
 
     private LocalDate startDate;
 
-
     private LocalDate endDate;
 
     private String extra;
 
-
     private double goalAmount;
-
 
     private double raisedAmount;
 
-
     private boolean isDeleted;
+
+    private AddressResponse address;
 }

@@ -1,4 +1,4 @@
-package com.anuj.Spoorthi.users;
+package com.anuj.spoorthi.users;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.anuj.Spoorthi.programs;
+package com.anuj.spoorthi.programs;
 
 import java.util.List;
 
