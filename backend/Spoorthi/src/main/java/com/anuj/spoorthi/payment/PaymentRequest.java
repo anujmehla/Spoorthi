@@ -2,32 +2,31 @@ package com.anuj.spoorthi.payment;
 
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
-@Data
-public class PaymentRequest {
+public record PaymentRequest(
+        @NotBlank
+        String name,
 
-    @NotBlank
-    private String name;
+        @NotNull
+        Double amountDonated,
 
-    @NotBlank
-    private double amountDonated;
+        @NotNull
+        Long phoneNumber,
 
-    @NotBlank
-    private int phoneNumber;
+        @NotNull
+        PaymentMode paymentMode,
 
-//    @NotBlank
-    private PaymentMode paymentMode;
+        @NotBlank
+        String emailId,
 
-    @NotBlank
-    private String emailId;
+        @NotNull
+        Integer transactionId,
 
-//    @NotBlank
-    private Integer transactionId;
-
-    @NotBlank
-    private LocalDateTime dateTime;
-
+        @NotNull
+        LocalDateTime dateTime
+) {
 }
+

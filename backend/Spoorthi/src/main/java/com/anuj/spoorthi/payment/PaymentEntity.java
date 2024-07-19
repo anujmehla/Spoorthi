@@ -4,7 +4,8 @@ package com.anuj.spoorthi.payment;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,7 +14,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "payment")
 public class PaymentEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,21 +21,22 @@ public class PaymentEntity {
     @NotBlank
     private String name;
 
-    @NotBlank
-    private double amountDonated;
+    @Positive
+    private Double amountDonated;
 
-    @Size(min = 10, max = 100)
-    private int phoneNumber;
+    @NotNull
+    private Long phoneNumber;
 
-//    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private PaymentMode paymentMode;
 
     @Email
     private String emailId;
 
-    @NotBlank
+    @NotNull
     private Integer transactionId;
 
-    @NotBlank
+    @NotNull
     private LocalDateTime dateTime;
+
 }

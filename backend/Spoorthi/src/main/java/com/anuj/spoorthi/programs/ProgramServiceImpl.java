@@ -17,10 +17,12 @@ import java.util.List;
 @Service
 public class ProgramServiceImpl implements ProgramService{
 
+    private final ProgramRepository repository;
+
     @Autowired
-    ProgramRepository repository;
-    @Autowired
-    private EntityManagerFactoryBuilder entityManagerFactoryBuilder;
+    public ProgramServiceImpl(ProgramRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public String addProgram(ProgramRequest programRequest) {
@@ -39,7 +41,7 @@ public class ProgramServiceImpl implements ProgramService{
         try {
             savedProgram = repository.save(newProgram);
         } catch (DataIntegrityViolationException dve) {
-            log.error("Error in saving Program : Inside Service", dve);
+            log.error("Error in saving Program : Inside Service due to dve", dve);
         } catch (Exception e) {
             log.error("Error in saving Program : Inside Service", e);
         }
@@ -54,7 +56,6 @@ public class ProgramServiceImpl implements ProgramService{
 
         List<ProgramEntity> all = repository.getAllPrograms();
 
-//        System.out.println(all);
 
         List<ProgramResponse> responses = new ArrayList<>();
 
