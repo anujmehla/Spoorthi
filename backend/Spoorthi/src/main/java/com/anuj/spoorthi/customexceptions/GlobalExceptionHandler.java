@@ -12,5 +12,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleCardNotFoundException(CardNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(BlogNotFoundException.class)
+    public ResponseEntity<String> handleBlogNotFoundException(BlogNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
 
 }

@@ -13,9 +13,7 @@ public class AddressEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
     private String streetName;
-
 
     private String locality;
 
@@ -34,6 +32,4 @@ public class AddressEntity {
     @NotBlank
     private String country;
 
-//    @OneToOne(mappedBy = "address")
-//    private ProgramEntity program;
 }
