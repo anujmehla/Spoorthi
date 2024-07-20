@@ -1,4 +1,4 @@
-package com.anuj.spoorthi.customExceptions;
+package com.anuj.spoorthi.customexceptions;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
