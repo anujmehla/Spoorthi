@@ -31,12 +31,15 @@ public class UserController {
 
     @GetMapping("/get/{username}")
     public ResponseEntity<?> getUser(@PathVariable String username) {
+
         UserEntity userFound = userService.getUser(username);
         if (userFound == null) {
             return new ResponseEntity<>("User not found.", HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(userFound, HttpStatus.OK);
     }
+
+
 
     @PutMapping("update/{username}")
     public ResponseEntity<?> updateUser(@PathVariable String username,
@@ -63,5 +66,7 @@ public class UserController {
         }
         return new ResponseEntity<>("User is deleted successfully",HttpStatus.OK);
     }
+
+
 
 }

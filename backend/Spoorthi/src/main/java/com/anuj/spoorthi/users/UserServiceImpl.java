@@ -2,6 +2,7 @@ package com.anuj.spoorthi.users;
 
 import com.anuj.spoorthi.address.AddressEntity;
 import com.anuj.spoorthi.address.AddressRequest;
+import com.anuj.spoorthi.customexceptions.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity getUser(String username) {
-        return userRepository.findByUsername(username);
+      return userRepository.findByUsername(username).
+                orElseThrow(()-> new UserNotFoundException("No such user exists "+ username));
     }
 
     @Override
