@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/testimonials")
@@ -30,7 +31,7 @@ public class TestimonialController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> editTestimonial(@RequestBody TestimonialDTO testimonialDTO , @PathVariable int id){
+    public ResponseEntity<String> editTestimonial(@RequestBody TestimonialDTO testimonialDTO , @PathVariable UUID id){
         String status = testimonialService.updateTestimonial(testimonialDTO, id);
         return new ResponseEntity<>(status, HttpStatus.OK);
     }

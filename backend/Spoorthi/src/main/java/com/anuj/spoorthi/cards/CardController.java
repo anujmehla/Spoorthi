@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RequestMapping("/cards")
 @RestController()
@@ -44,7 +45,7 @@ public class CardController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getCardById(@PathVariable long id) {
+    public ResponseEntity<?> getCardById(@PathVariable UUID id) {
         CardEntityDto card = cardService.getCard(id);
 
         if (card == null) {

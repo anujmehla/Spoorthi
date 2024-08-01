@@ -1,5 +1,6 @@
 package com.anuj.spoorthi.blog;
 
+import com.anuj.spoorthi.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,11 +12,7 @@ import java.time.Instant;
 @Data
 @Table(name = "blog")
 @Entity
-public class BlogEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class BlogEntity extends BaseEntity {
 
     @NotBlank
     private String title;

@@ -1,6 +1,7 @@
 package com.anuj.spoorthi.payment;
 
 
+import com.anuj.spoorthi.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -13,10 +14,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "payment")
-public class PaymentEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class PaymentEntity  extends BaseEntity {
 
     @NotBlank
     private String name;

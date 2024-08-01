@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -64,7 +65,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public BlogDTO getBlog(long id) {
+    public BlogDTO getBlog(UUID id) {
         log.info("getBlog");
         BlogEntity blog = blogRepository.findById(id)
                 .orElseThrow(() -> new BlogNotFoundException("Blog not found with id "+id));

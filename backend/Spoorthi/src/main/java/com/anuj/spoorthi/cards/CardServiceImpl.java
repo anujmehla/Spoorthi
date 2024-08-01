@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -60,7 +61,7 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    public CardEntityDto getCard(long id) {
+    public CardEntityDto getCard(UUID id) {
         CardEntity card = cardRepository.findById(id)
                 .orElseThrow(() -> new CardNotFoundException("Card Not found with id : "+id));
 

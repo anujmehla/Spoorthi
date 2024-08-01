@@ -1,5 +1,6 @@
 package com.anuj.spoorthi.testimonials;
 
+import com.anuj.spoorthi.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -9,11 +10,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "testimonial")
-public class Testimonial {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class TestimonialEntity extends BaseEntity {
 
     @NotBlank
     private String image;

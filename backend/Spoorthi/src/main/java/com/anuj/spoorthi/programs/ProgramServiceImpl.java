@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -73,7 +74,7 @@ public class ProgramServiceImpl implements ProgramService{
     }
 
     @Override
-    public ProgramResponse updateProgram(ProgramRequest programRequest, int id) {
+    public ProgramResponse updateProgram(ProgramRequest programRequest, UUID id) {
 
         log.info("Updating programRequest with id " + id);
 

@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -42,7 +43,7 @@ public class ProgramController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateProgram(@Valid @RequestBody ProgramRequest program , @PathVariable int id){
+    public ResponseEntity<?> updateProgram(@Valid @RequestBody ProgramRequest program , @PathVariable UUID id){
 
         ProgramResponse response = programService.updateProgram(program, id);
         String message = "UPDATED SUCCESSFULLY";

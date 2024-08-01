@@ -1,6 +1,7 @@
 package com.anuj.spoorthi.programs;
 
 import com.anuj.spoorthi.address.AddressEntity;
+import com.anuj.spoorthi.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
@@ -13,11 +14,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "program")
 
-public class ProgramEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class ProgramEntity  extends BaseEntity {
 
     @NotBlank
     private String name;

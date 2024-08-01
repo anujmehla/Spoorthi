@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RequestMapping("/blogs")
 @RestController
@@ -44,7 +45,7 @@ public class BlogController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getBlogById(@PathVariable long id) {
+    public ResponseEntity<?> getBlogById(@PathVariable UUID id) {
         BlogDTO blog = blogService.getBlog(id);
 
         if (blog == null) {

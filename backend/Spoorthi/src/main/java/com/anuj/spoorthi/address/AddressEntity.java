@@ -1,5 +1,6 @@
 package com.anuj.spoorthi.address;
 
+import com.anuj.spoorthi.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
@@ -7,11 +8,8 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "address")
-public class AddressEntity {
+public class AddressEntity extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
     private String streetName;
 
