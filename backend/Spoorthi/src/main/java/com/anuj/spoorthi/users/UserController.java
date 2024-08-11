@@ -40,7 +40,6 @@ public class UserController {
     }
 
 
-
     @PutMapping("update/{username}")
     public ResponseEntity<?> updateUser(@PathVariable String username,
                                         @Valid @RequestBody UserRequest userRequest,

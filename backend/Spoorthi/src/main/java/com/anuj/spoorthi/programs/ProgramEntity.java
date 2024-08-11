@@ -29,7 +29,6 @@ public class ProgramEntity  extends BaseEntity {
     @FutureOrPresent(message = "Event date must be in the present or future")
     private LocalDate endDate;
 
-
     private String extra;
 
     @NotNull

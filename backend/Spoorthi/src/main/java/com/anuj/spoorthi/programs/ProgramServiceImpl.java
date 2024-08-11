@@ -54,9 +54,11 @@ public class ProgramServiceImpl implements ProgramService{
 
     @Override
     public List<ProgramResponse> getAllPrograms() {
+        log.info("All Programs :Inside Service");
 
         List<ProgramEntity> all = repository.getAllPrograms();
 
+        log.info("Program Entity {}",all);
 
         List<ProgramResponse> responses = new ArrayList<>();
 

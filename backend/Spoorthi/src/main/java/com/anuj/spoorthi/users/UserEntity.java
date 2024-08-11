@@ -1,6 +1,7 @@
 package com.anuj.spoorthi.users;
 
 import com.anuj.spoorthi.address.AddressEntity;
+import com.anuj.spoorthi.shared.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -10,10 +11,7 @@ import lombok.Data;
         @UniqueConstraint(columnNames = "email"),
         @UniqueConstraint(columnNames = "phone")
 })
-public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class UserEntity extends BaseEntity {
 
     @Column(name = "firstName" , nullable = false)
     private String firstName;
