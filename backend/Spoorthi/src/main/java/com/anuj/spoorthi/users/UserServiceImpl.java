@@ -1,13 +1,21 @@
 package com.anuj.spoorthi.users;
 
 import com.anuj.spoorthi.address.AddressEntity;
+import com.anuj.spoorthi.address.AddressRepository;
 import com.anuj.spoorthi.address.AddressRequest;
+import com.anuj.spoorthi.customexceptions.ResourceNotFoundException;
 import com.anuj.spoorthi.customexceptions.UserNotFoundException;
+import jakarta.persistence.LockModeType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -15,6 +23,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private AddressRepository addressRepository;
 
 
     @Override
@@ -59,26 +69,25 @@ public class UserServiceImpl implements UserService {
                 orElseThrow(()-> new UserNotFoundException("No such user exists "+ username));
     }
 
+//    @Transactional
     @Override
     public String updateUser(String username, UserRequest userRequest) {
         UserEntity existingUser = getUser(username);
         if (existingUser == null) {
             return null;
         }
-        String existingEmail = existingUser.getEmail();
 
+        AddressEntity addressEntity = addressRepository.findById(existingUser.getAddress().getId())
+                .orElseThrow(()-> new ResourceNotFoundException("No Such Address found "));
+
+        BeanUtils.copyProperties(userRequest.getAddress(),addressEntity);
+
+        existingUser.setAddress(addressEntity);
         BeanUtils.copyProperties(userRequest,existingUser);
-        existingUser.setEmail(existingEmail);
 
-        try {
-            userRepository.save(existingUser);
-        } catch (DataIntegrityViolationException dive) {
-            log.info("Database constraint violation while saving entity: {}", existingUser, dive);
-            return null;
-        } catch (Exception e) {
-            log.info("Exception occurred while saving the user!! " , e);
-            return null;
-        }
+        UserEntity save = userRepository.save(existingUser);
+        log.info(existingUser.toString());
+
 
         return "updated";
     }
