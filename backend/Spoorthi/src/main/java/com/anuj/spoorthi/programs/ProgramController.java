@@ -43,7 +43,8 @@ public class ProgramController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateProgram(@Valid @RequestBody ProgramRequest program , @PathVariable UUID id){
+    public ResponseEntity<?> updateProgram(@Valid @RequestBody ProgramRequest program ,
+                                           @PathVariable("id") UUID id){
 
         ProgramResponse response = programService.updateProgram(program, id);
         String message = "UPDATED SUCCESSFULLY";

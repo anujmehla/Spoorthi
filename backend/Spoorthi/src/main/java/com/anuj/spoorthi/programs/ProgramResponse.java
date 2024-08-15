@@ -22,7 +22,5 @@ public class ProgramResponse {
 
     private double raisedAmount;
 
-    private boolean isDeleted;
-
     private AddressResponse address;
 }
