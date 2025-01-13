@@ -12,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.jpa.repository.Lock;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.PublicKey;
 import java.util.Optional;
 
 @Slf4j
@@ -25,11 +27,15 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     @Autowired
     private AddressRepository addressRepository;
-
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public String addUser(UserRequest userRequest) {
         UserEntity newUser = new UserEntity();
+        String strongPassword = passwordEncoder.encode(userRequest.getPassword());
+        userRequest.setPassword(strongPassword);
+
         BeanUtils.copyProperties(userRequest,newUser);
 
         AddressRequest address = userRequest.getAddress();
@@ -40,11 +46,10 @@ public class UserServiceImpl implements UserService {
             newUser.setAddress(addressEntity);
         }
 
-        System.out.println("in service");
-        System.out.println(newUser);
+        log.info("in service");
+        log.info("User object : {}",newUser);
 
         UserEntity userCreated = null;
-
 
         try {
             userCreated = userRepository.save(newUser);
